@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rentables</title>
+    <link rel="stylesheet" href="/css/landingPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="row">
+      <div class="column left">
+        <h1 class="heading">Rentables</h1>
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8ologodb.json"  background="transparent"  speed="1"  style="width: 24vw; height: 24vw;"  loop  autoplay></lottie-player>
+        <p id="subtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="column right">
+        <form class="signInForm" action="landingPage" method="post">
+          <h1 class="formHeading">Sign In To Continue</h1>
+          <input id="emailInput" type="email" name="emailID" value="" placeholder="Enter registered email ID" required><br>
+          <input id="passInput" type="password" name="password" value="" placeholder="Enter password" required><br>
+          <button id="loginButton" type="submit" name="signInButton">Sign In</button>
+        </form>
+        <form class="redirectForm" action="forgotPass" method="get">
+          <button class="buttons" type="submit" name="forgotPass" value="true">Forgot Password</button>
+        </form>
+        <form class="redirectForm" action="register" method="get">
+          <button class="buttons" type="submit" name="register" value="true">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</html>

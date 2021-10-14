@@ -1,0 +1,28 @@
+.row{
+  padding: 5%;
+}
+
+.card{
+  background-color: #F8994D !important;
+  color: white;
+  margin: 5px;
+}
+
+.view{
+  background-color: white !important;
+  display: inline-block;
+  margin-left: 12%;
+}
+
+.cost{
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+#navbar{
+  background-color: white !important;
+  border-bottom: 2px solid #F8994D;
+}
+ #logoImg{
+   margin-left: 4%;
+}

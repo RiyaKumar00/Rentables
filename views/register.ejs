@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rentables</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="row">
+      <div class="column left">
+        <h1 class="heading">Rentables</h1>
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8ologodb.json"  background="transparent"  speed="1"  style="width: 24vw; height: 24vw;"  loop  autoplay></lottie-player>
+        <p id="subtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="column right">
+        <form name="registrationForm" class="signInForm" action="register" method="post" onsubmit="return validate();">
+          <h1 class="formHeading">Register to start trading on Rentables.in</h1>
+          <input id="nameInput" type="text" name="name" value="" placeholder="Enter full name" required><br>
+          <input id="emailInput" type="email" name="emailID" value="" placeholder="Enter email ID" required><br>
+          <input id="phoneInput" type="text" name="phone" value="" placeholder="Enter primary contact number" required><br>
+          <input id="passInput" type="password" name="password" value="" placeholder="Choose password" required><br>
+          <input id="confPassInput" type="password" name="confPassword" value="" placeholder="Confirm password" required><br>
+          <button id="loginButton" type="submit" name="signInButton">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/js/register.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</html>
