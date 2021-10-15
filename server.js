@@ -22,6 +22,12 @@ app.use(express.static('public'));
 app.use("/", require("./routes/login"))
 app.use("/register",require("./routes/register"));
 app.use("/home",require("./routes/home"));
+app.use("/view",require("./routes/view"));
+app.use("/dashboard",require("./routes/dashboard"));
+app.use("/logout",require("./routes/logout"));
+app.use("/delete",require("./routes/delete"));
+app.use("/addItem",require("./routes/addItem"));
+app.use("/request",require("./routes/request"));
 
 var server = app.listen(PORT, function() {
   console.log("Server is running on port " + PORT);

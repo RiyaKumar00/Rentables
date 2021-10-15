@@ -10,7 +10,7 @@ router.get("/",verify,async(req,res)=>{
     return;
   }
   try{
-    let items = await Item.find({shared : 1}).sort({_id : -1}).limit(8);
+    let items = await Item.find({shared : 1}).sort({_id : -1});
     User.findOne({
      emailID: req.data.emailID
     }, function(err, foundUser) {
@@ -30,24 +30,5 @@ router.get("/",verify,async(req,res)=>{
     res.send(e.message)
   }
 })
-
-function getUserID(email){
-  var userID;
-  User.findOne({
-   emailID: email
-  }, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
-     if (foundUser) {
-       userID = foundUser.id;
-     } else {
-       console.log("User Not Found")
-     }
-   }
- });
- console.log(userID)
- return userID;
-}
 
 module.exports = router;

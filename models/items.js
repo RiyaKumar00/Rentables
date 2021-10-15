@@ -9,7 +9,6 @@ const ItemSchema = mongoose.Schema({
   sharedOn: String,
   minTenure: String,
   maxTenure: String,
-  rating : String,
   shared : Number,
   userID : String,
 })

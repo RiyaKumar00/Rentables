@@ -14,9 +14,16 @@
   <body>
     <nav id="navbar" class="navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img id="logoImg" src="/images/logo.png" alt="logo" style="width: 200px;"></a>
+        <a class="navbar-brand" href="/"><img id="logoImg" src="/images/logo.png" alt="logo" style="width: 200px;"></a>
+        <span class="navbar-text">
+          <a class="account Link" href="/dashboard/<%= userId %>">My Account</a>
+          <a class="logout Link" href="/logout">Logout</a>
+        </span>
       </div>
     </nav>
+    <div class="heading">
+      <h1>Available Items</h1>
+    </div>
     <div class="row">
         <% for(let i=0;i<item.length;i++){%>
         <% if(item[i].userID !== userId){%>
@@ -26,8 +33,8 @@
             <div class="card-body">
               <h4 class="card-title"><%=item[i].name%></h4>
               <p class="card-text">Category : <%=item[i].category%></p>
-              <p class="cost card-text"><b><%=item[i].cost%></b></p>
-              <a href="/view/<%=item[i].id%>" class="btn view">View Item</a>
+              <a class="btn cost"><%=item[i].cost%></a>
+              <a href="/view/<%= userId %>/<%=item[i].id%>" class="btn view">View Item</a>
             </div>
           </div>
         </div>

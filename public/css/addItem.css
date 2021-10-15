@@ -4,18 +4,6 @@ body{
 *{
   font-family: 'Work Sans', sans-serif;
 }
-.row{
-  padding: 2% 5%;
-}
-.heading{
-  text-align: center;
-  margin-top: 2%;
-}
-.card{
-  background-color: #F8994D !important;
-  color: white;
-  margin: 5px;
-}
 .Link{
   text-decoration: none;
   color: #292929;
@@ -32,19 +20,19 @@ body{
 .Link:hover{
   color: #F8994D;
 }
-.view{
-  background-color: white !important;
-  display: inline-block;
-  margin-left: 10%;
+.heading{
+  text-align: center;
+  margin-bottom: 1.5%;
 }
-
-.cost{
-  background-color: white !important;
-  display: inline-block;
-  pointer-events: none;
-  cursor: default;
+#addButton{
+  background-color: #F8994D;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  font-size: 1.4rem;
+  width: 100%;
+  margin-top: 1.5%;
 }
-
 #navbar{
   background-color: white !important;
   border-bottom: 2px solid #F8994D;

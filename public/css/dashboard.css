@@ -1,0 +1,107 @@
+body{
+  overflow-x: hidden;
+}
+*{
+  font-family: 'Work Sans', sans-serif;
+}
+.options{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.option{
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid  #F8994D;
+  transition: 0.5s;
+  margin : 32px;
+  background: #ffe7d4;
+}
+
+.option a{
+  color : black;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.option.active ,.option:hover{
+  background: linear-gradient(to right, #fc933f, #F8994D ,#faa561);
+  color : white;
+  transition: 0.5s;
+}
+
+
+.option.active a , .option:hover a{
+  color : white;
+  transition: 0.5s;
+}
+.row{
+  padding: 2% 5%;
+}
+
+.card{
+  background-color: #F8994D !important;
+  color: white;
+  margin: 5px 5px 20px 5px;
+  height: 410px;
+  text-decoration: none;
+}
+.card:hover{
+  color: white;
+}
+.Link{
+  text-decoration: none;
+  color: #292929;
+  font-size: 1.2rem;
+}
+.account{
+  margin-right: 8px;
+  border-right: 2px solid #292929;
+  padding-right: 8px;
+}
+.logout{
+  margin-right: 20px;
+}
+.Link:hover{
+  color: #F8994D;
+}
+.view{
+  background-color: white !important;
+  display: inline-block;
+  margin-left: 4%;
+}
+.delete{
+  width: 100%;
+  background-color: white !important;
+  display: inline-block;
+  margin-top: 5%;
+  color: red !important;
+}
+.cost{
+  background-color: white !important;
+  display: inline-block;
+  pointer-events: none;
+  cursor: default;
+}
+
+.addNew{
+  width: 50% !important;
+  margin: 30% 25% 10% 25% !important;
+}
+.add-title{
+  margin: 10% 30%;
+}
+.newItem{
+  display:
+}
+#navbar{
+  background-color: white !important;
+  border-bottom: 2px solid #F8994D;
+}
+ #logoImg{
+   margin-left: 4%;
+}

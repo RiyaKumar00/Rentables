@@ -1,0 +1,109 @@
+body{
+  overflow-x: hidden;
+}
+*{
+  font-family: 'Work Sans', sans-serif;
+}
+.itemName{
+  font-size: 4rem;
+}
+.Link{
+  text-decoration: none;
+  color: #292929;
+  font-size: 1.2rem;
+}
+.account{
+  margin-right: 8px;
+  border-right: 2px solid #292929;
+  padding-right: 8px;
+}
+.logout{
+  margin-right: 20px;
+}
+.Link:hover{
+  color: #F8994D;
+}
+.itemDetails{
+  font-size: 1.2rem;
+}
+#navbar{
+  background-color: white !important;
+  border-bottom: 2px solid #F8994D;
+}
+ #logoImg{
+   margin-left: 4%;
+}
+#section1 {
+    height: 90vh;
+}
+
+#section2 {
+    height: 600px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#section2a{
+    height: 400px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: #F8994D;
+    padding: 0 2%;
+}
+.one {
+    float: left;
+    text-align: left;
+}
+.two {
+    float: right;
+    text-align: right;
+    margin-right: 3%;
+}
+.three {
+    float: left;
+    text-align: left;
+    text-align: center;
+    color: #F8994D;
+    font-size: 2.2rem;
+}
+.four {
+    float: right;
+    text-align: right;
+    margin-right: 3%;
+    background-color: #F8994D;
+    border-color:#F8994D;
+}
+
+.five {
+    float: left;
+    text-align: left;
+    margin-left: 10%;
+    font-size: 25px;
+}
+.six {
+    float: right;
+    text-align: left;
+    margin-right: 10%;
+    font-size: 25px;
+}
+
+.text_orange{
+    color: #F8994D;
+}
+.centered{
+  text-align: right;
+}
+#contact{
+  color: white;
+  font-size: 1.5rem;
+}
+#request{
+  color: white;
+  font-size: 1.5rem;
+  background-color: #F8994D;
+  border: none;
+  width: 48%;
+  margin-right: 3%;
+}

@@ -4,11 +4,13 @@ const UserSchema = mongoose.Schema({
   name: String,
   emailID : String,
   phone: String,
+  address: String,
   password : String,
-  given : Array,
-  received : Array,
-  pendingApproval : Array,
-  requestApproval : Array
+  shared : Array,
+  borrowed : Array,
+  requested: Array,
+  pendingRequests : Array,
+  approvedRequests : Array
 })
 
 

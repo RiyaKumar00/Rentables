@@ -10,18 +10,20 @@ router.get("/", (req,res)=>{
 
 router.post("/", async(req,res)=>{
   try{
-    var {name, emailID, phone, password} = req.body;
+    var {name, emailID, phone, password, address} = req.body;
     const salt = await bycrypt.genSalt(10);
     password = await bycrypt.hash(password,salt);
     const user = new User({
       name: name,
       emailID : emailID,
       phone: phone,
+      address: address,
       password : password,
-      given : [],
-      received : [],
-      pendingApproval : [],
-      requestApproval : []
+      shared : [],
+      borrowed : [],
+      requested: [],
+      pendingRequests : [],
+      approvedRequests : []
     })
     user.save();
     console.log("Successfully Registered!");
