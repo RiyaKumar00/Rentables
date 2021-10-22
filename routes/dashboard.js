@@ -3,6 +3,7 @@ const verify = require("../middleware/verify");
 const router = express.Router();
 const Item = require("../models/items");
 const User = require('../models/users');
+const Request = require('../models/requests');
 
 router.get('/:userID', verify, (req,res)=>{
   if(req.auth == "valid"){
@@ -42,8 +43,9 @@ router.get('/borrowed/:userID', verify, (req,res)=>{
          var borrowed = foundUser.borrowed;
          var items = [];
          for(let i=0;i<borrowed.length;i++){
-           var item = await Item.findById(borrowed[i]);
-           items.push(item);
+           var request = await Request.findById(borrowed[i]);
+           var item = await Item.findById(request.itemID);
+           items.push({object: item, req: request});
          }
          res.render("borrowedDashboard",{user: foundUser, item: items});
        } else {
@@ -69,8 +71,9 @@ router.get('/requested/:userID', verify, (req,res)=>{
          var requested = foundUser.requested;
          var items = [];
          for(let i=0;i<requested.length;i++){
-           var item = await Item.findById(requested[i]);
-           items.push(item);
+           var request = await Request.findById(requested[i]);
+           var item = await Item.findById(request.itemID);
+           items.push({object: item, req: request});
          }
          res.render("requestedDashboard",{user: foundUser, item: items});
        } else {
@@ -96,8 +99,9 @@ router.get('/requests/pending/:userID', verify, (req,res)=>{
          var pendingRequests = foundUser.pendingRequests;
          var items = [];
          for(let i=0;i<pendingRequests.length;i++){
-           var item = await Item.findById(pendingRequests[i]);
-           items.push(item);
+           var request = await Request.findById(pendingRequests[i]);
+           var item = await Item.findById(request.itemID);
+           items.push({object: item, req: request});
          }
          res.render("pendingDashboard",{user: foundUser, item: items});
        } else {
@@ -123,8 +127,9 @@ router.get('/requests/approved/:userID', verify, (req,res)=>{
          var approvedRequests = foundUser.approvedRequests;
          var items = [];
          for(let i=0;i<approvedRequests.length;i++){
-           var item = await Item.findById(approvedRequests[i]);
-           items.push(item);
+           var request = await Request.findById(approvedRequests[i]);
+           var item = await Item.findById(request.itemID);
+           items.push({object: item, req: request});
          }
          res.render("approvedDashboard",{user: foundUser, item: items});
        } else {

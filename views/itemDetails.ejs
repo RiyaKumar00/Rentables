@@ -25,8 +25,8 @@
     </div>
   </nav>
     <div class="main" id="section1">
-        <img src="https://images.financialexpress.com/2019/12/1200-1.jpg?w=1200&h=800&imflag=true" alt="myImage" height="400" width="685" style="float:left; margin-top: 7%; margin-left:2%; margin-right: 4%">
-        <br><br><br><br><br>
+        <img src="https://images.financialexpress.com/2019/12/1200-1.jpg?w=1200&h=800&imflag=true" alt="myImage" style="width:48vw;float:left; margin-top: 4%; margin-left:2%; margin-right: 4%">
+        <br><br><br>
         <span class="one"><%= item.category %></span><span class="two"><%= item.sharedOn %></span>
         <br>
         <h1 style="text-align: center" class="itemName text_orange"><%= item.name %></h1>
@@ -40,12 +40,12 @@
         </span>
         <% if(userID != user.id){ %>
         <div class="centered">
-          <a href="/request/<%= userID %>/<%= user.id %>" id="request" class="btn">REQUEST ITEM</a>
+          <a href="#section3" class="btn" id="requestLink">REQUEST ITEM</a>
         </div>
         <% } %>
     </div>
     <div class="main" id="section2">
-        <h1 class="text_orange">OWNER DETAILS</h1>
+        <h1 class="heading text_orange">OWNER DETAILS</h1>
         <div class="main" id="section2a">
             <br><br><br>
             <h3>
@@ -70,6 +70,22 @@
             <br>
         </div>
     </div>
+    <% if(userID != user.id){ %>
+    <div class="main" id="section3">
+      <h1 class="heading text_orange">REQUEST <%= item.name %></h1>
+      <form class="requestForm" action="/request/<%= item.id %>/<%= userID %>/<%= user.id %>" method="post">
+        <div class="inputGroup">
+          <label for="startDate">Starting from: </label>
+          <input type="text" name="startDate" placeholder="Ex. 01-01-2000">
+        </div>
+        <div class="inputGroup duration">
+          <label for="duration">Rent Duration: </label>
+          <input type="text" name="duration" placeholder="Ex. 2"> weeks
+        </div>
+        <input type="submit" class="btn" id="request" value="REQUEST ITEM">
+      </form>
+    </div>
+    <% } %>
 </body>
 <script src="/js/itemDetails.js"></script>
 </html>

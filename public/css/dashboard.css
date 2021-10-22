@@ -40,14 +40,15 @@ body{
   transition: 0.5s;
 }
 .row{
-  padding: 2% 5%;
+  padding: 0 5% 2% 5%;
 }
 
 .card{
   background-color: #F8994D !important;
   color: white;
   margin: 5px 5px 20px 5px;
-  height: 410px;
+  padding-bottom: 2%;
+  min-height: 410px;
   text-decoration: none;
 }
 .card:hover{
@@ -81,13 +82,40 @@ body{
   margin-top: 5%;
   color: red !important;
 }
+.approve{
+  width: 100%;
+  background-color: white !important;
+  display: inline-block;
+  margin-top: 5%;
+  color: green !important;
+}
+.reject{
+  width: 100%;
+  background-color: white !important;
+  display: inline-block;
+  margin-top: 5%;
+  color: red !important;
+}
 .cost{
   background-color: white !important;
   display: inline-block;
   pointer-events: none;
   cursor: default;
 }
-
+.status{
+  background-color: white !important;
+  display: inline-block;
+  pointer-events: none;
+  cursor: default;
+  margin-top: 2%;
+  width: 100%;
+}
+.pending{
+  color: green !important;
+}
+.rejected{
+  color: red !important;
+}
 .addNew{
   width: 50% !important;
   margin: 30% 25% 10% 25% !important;
@@ -95,8 +123,12 @@ body{
 .add-title{
   margin: 10% 30%;
 }
-.newItem{
-  display:
+.startdate{
+  margin-top: 5% !important;
+  margin-bottom: 0 !important;
+}
+.duration{
+  margin-bottom: 5% !important;
 }
 #navbar{
   background-color: white !important;

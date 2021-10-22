@@ -16,7 +16,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><img id="logoImg" src="/images/logo.png" alt="logo" style="width: 200px;"></a>
       <span class="navbar-text">
-        <a class="account Link" href="/dashboard/<%= user.id %>">My Account</a>
+        <a class="account Link" href="/">Browse</a>
         <a class="logout Link" href="/logout">Logout</a>
       </span>
     </div>
@@ -45,10 +45,19 @@
           <div class="card" style="width: 19rem;">
             <img src="https://images.financialexpress.com/2019/12/1200-1.jpg?w=1200&h=800&imflag=true" style= "height: 200px" class="card-img-top" alt="thumbnail">
             <div class="card-body">
-              <h4 class="card-title"><%=item[i].name%></h4>
-              <p class="card-text">Category : <%=item[i].category%></p>
-              <a class="btn cost"><%=item[i].cost%></a>
-              <a href="/view/<%= user.id %>/<%=item[i].id%>" class="btn view">View Item</a>
+              <h4 class="card-title"><b><%=item[i].object.name%></b></h4>
+              <p class="card-text">Category : <%=item[i].object.category%></p>
+              <p class="card-text startdate">Start Date: <%= item[i].req.startDate %></p>
+              <p class="card-text duration">Duration: <%= item[i].req.duration %> weeks</p>
+              <a class="btn cost"><%=item[i].object.cost%></a>
+              <a href="/view/<%= user.id %>/<%=item[i].object.id%>" class="btn view">View Item</a>
+              <% if(item[i].req.status == "Pending"){ %>
+                <a class="btn status pending"><b>STATUS: <%=item[i].req.status%></b></a>
+              <% } %>
+              <% if(item[i].req.status == "Rejected"){ %>
+                <a class="btn status rejected"><b>STATUS: <%=item[i].req.status%></b></a>
+              <% } %>
+              <a onclick=" return confirm('Are you sure you want to permanently withdraw this request?')" href="/delete/request/<%=item[i].req.id%>" class="btn delete"><b>WITHDRAW REQUEST</b></a>
             </div>
           </div>
         </div>

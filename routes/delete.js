@@ -3,6 +3,7 @@ const verify = require("../middleware/verify");
 const router = express.Router();
 const Item = require("../models/items");
 const User = require('../models/users');
+const Request = require('../models/requests');
 
 router.get('/:itemID',verify, async(req,res)=>{
   if(req.auth != "valid"){
@@ -39,6 +40,36 @@ router.get('/:itemID',verify, async(req,res)=>{
   }
   catch(e){
     res.send(e.message)
+  }
+});
+
+router.get('/request/:reqID',verify, async(req,res)=>{
+  if(req.auth != "valid"){
+    res.redirect("/")
+    return;
+  }
+  try{
+    Request.findByIdAndRemove(req.params.reqID, (err, result)=>{
+      if(err){
+        console.log(err);
+      }
+      else{
+        User.findByIdAndUpdate(result.borrowerID, {$pull: {requested: result.id}}, (err, doc)=>{
+          if(err){
+            console.log(err);
+          }
+        });
+        User.findByIdAndUpdate(result.lenderID, {$pull: {pendingRequests: result.id}}, (err, doc)=>{
+          if(err){
+            console.log(err);
+          }
+        });
+        res.redirect('/dashboard/requested/'+result.borrowerID);
+      }
+    });
+  }
+  catch(e){
+    console.log(e.message);
   }
 });
 

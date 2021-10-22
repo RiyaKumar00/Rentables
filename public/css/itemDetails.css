@@ -6,6 +6,8 @@ body{
 }
 .itemName{
   font-size: 4rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 .Link{
   text-decoration: none;
@@ -38,16 +40,27 @@ body{
 }
 
 #section2 {
-    height: 600px;
+    height: 90vh;
     margin-left: 2%;
     margin-right: 2%;
+    padding-top: 8%;
+    margin-bottom: 5%;
+    border-top: 2px solid #F8994D;
+}
+
+#section3 {
+    height: 90vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 4%;
+    border-top: 2px solid #F8994D;
 }
 
 #section2a{
     height: 400px;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 5%;
+    margin-top: 4%;
     border-radius: 20px;
     background-color: #F8994D;
     padding: 0 2%;
@@ -93,17 +106,40 @@ body{
     color: #F8994D;
 }
 .centered{
-  text-align: right;
+  text-align: center;
 }
+
+.requestForm{
+  border-radius: 20px;
+  border: 2px solid #F8994D;
+  margin-top: 5%;
+  padding: 5%;
+}
+.inputGroup{
+  display: inline !important;
+  margin-left: 15vw;
+}
+
 #contact{
   color: white;
   font-size: 1.5rem;
+}
+#requestLink{
+  color: white;
+  font-size: 1.5rem;
+  background-color: #F8994D;
+  border: none;
+  width: 42%;
+  margin-right: 3%;
+  margin-top: 4%;
 }
 #request{
   color: white;
   font-size: 1.5rem;
   background-color: #F8994D;
+  display: block;
   border: none;
-  width: 48%;
+  width: 100%;
   margin-right: 3%;
+  margin-top: 4%;
 }
