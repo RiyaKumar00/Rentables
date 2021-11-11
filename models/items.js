@@ -11,6 +11,11 @@ const ItemSchema = mongoose.Schema({
   maxTenure: String,
   shared : Number,
   userID : String,
+  img:
+  {
+      data: Buffer,
+      contentType: String
+  },
 })
 
 
