@@ -22,40 +22,30 @@
       </div>
     </nav>
     <div class="container my-5">
-    <form class="" action="/addItem/<%= userID %>" method="post" enctype="multipart/form-data">
+    <form class="reviewForm" action="/addReview/<%= item._id %>" method="post">
       <div class="heading">
-        <h1>Share An Item</h1>
+        <h1>Review <%= item.name %></h1>
       </div>
       <div class="input-group mb-3">
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-          <input type="text" class="form-control" name="name">
+          <span class="input-group-text" id="inputGroup-sizing-default">Rating</span>
+          <select class="stars" name="rating">
+            <option value="⭐">⭐</option>
+            <option value="⭐⭐">⭐⭐</option>
+            <option value="⭐⭐⭐">⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+          </select>
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Category</span>
-          <input type="text" class="form-control" name="category">
+          <span class="input-group-text" id="inputGroup-sizing-default">Write your review here</span>
+          <textarea name="review" rows="10" style="width: 71.5%;"></textarea>
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Cost in Rupees</span>
-          <input type="text" class="form-control" name="cost" placeholder="Ex. XXX/week">
+          <input class="form-check-input" name="anonymous" type="checkbox" value="anonymous" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault" style="margin-left: 10px;"> Post Anonymously</label>
         </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Minimum Tenure</span>
-          <input type="text" class="form-control" name="minTenure" placeholder="Ex. X Weeks">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Maximum Tenure</span>
-          <input type="text" class="form-control" name="maxTenure" placeholder="Ex. Y Weeks">
-        </div>
-        <div class="input-group mb-3">
-          <input type="file" class="form-control" name="thumbnail" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload Image</label>
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Write a short Description</span>
-          <textarea name="description" rows="3" style="width: 83.5%;"></textarea>
-        </div>
-        <button id="addButton" type="submit" name="button" class="btn btn-outline-secondary">ADD</button>
+        <button id="addReviewButton" type="submit" name="button" class="btn btn-outline-secondary">ADD REVIEW</button>
       </div>
       </form>
   </div>

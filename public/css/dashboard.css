@@ -82,6 +82,13 @@ body{
   margin-top: 5%;
   color: red !important;
 }
+.addReview{
+  width: 100%;
+  background-color: white !important;
+  display: inline-block;
+  margin-top: 5%;
+  color: #F8994D !important;
+}
 .approve{
   width: 100%;
   background-color: white !important;

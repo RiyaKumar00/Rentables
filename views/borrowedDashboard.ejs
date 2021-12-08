@@ -43,7 +43,7 @@
           <% if(item[i]!=null){ %>
         <div class="col-lg-4 col-md-6 col-xl-3 col-sm-12">
           <div class="card" style="width: 19rem;">
-            <img src="https://images.financialexpress.com/2019/12/1200-1.jpg?w=1200&h=800&imflag=true" style= "height: 200px" class="card-img-top" alt="thumbnail">
+            <img src="data:image/<%=item[i].object.img.contentType%>;base64,<%=item[i].object.img.data.toString('base64')%>" style= "height: 200px" class="card-img-top" alt="thumbnail">
             <div class="card-body">
               <h4 class="card-title"><b><%=item[i].object.name%></b></h4>
               <p class="card-text">Category : <%=item[i].object.category%></p>
@@ -51,6 +51,7 @@
               <p class="card-text duration">Duration: <%= item[i].req.duration %> weeks</p>
               <a class="btn cost"><%=item[i].object.cost%></a>
               <a href="/view/<%= user.id %>/<%=item[i].object.id%>" class="btn view">View Item</a>
+              <a href="/addReview/<%=item[i].object.id%>" class="btn addReview"><b>ADD REVIEW</b></a>
             </div>
           </div>
         </div>

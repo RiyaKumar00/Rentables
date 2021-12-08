@@ -44,7 +44,13 @@ body{
   pointer-events: none;
   cursor: default;
 }
-
+.search{
+  padding: 1% 3%;
+}
+#seacrhButton{
+  background-color: #F8994D;
+  color: white;
+}
 #navbar{
   background-color: white !important;
   border-bottom: 2px solid #F8994D;

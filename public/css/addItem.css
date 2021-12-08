@@ -24,6 +24,13 @@ body{
   text-align: center;
   margin-bottom: 1.5%;
 }
+.stars{
+  min-width:50vw;
+  text-align: center;
+}
+.reviewForm{
+  padding: 0 15%;
+}
 #addButton{
   background-color: #F8994D;
   border: none;
@@ -31,6 +38,15 @@ body{
   color:white;
   font-size: 1.4rem;
   width: 100%;
+  margin-top: 1.5%;
+}
+#addReviewButton{
+  background-color: #F8994D;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  font-size: 1.4rem;
+  width: 93%;
   margin-top: 1.5%;
 }
 #navbar{

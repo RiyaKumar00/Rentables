@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= item.name %></title>
-    <link rel="stylesheet" href="/css/itemDetails.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= item.name %></title>
+  <link rel="stylesheet" href="/css/itemDetails.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
   <nav id="navbar" class="navbar sticky-top navbar-light bg-light">
     <div class="container-fluid">
@@ -24,68 +27,102 @@
       </span>
     </div>
   </nav>
-    <div class="main" id="section1">
-        <img src="https://images.financialexpress.com/2019/12/1200-1.jpg?w=1200&h=800&imflag=true" alt="myImage" style="width:48vw;float:left; margin-top: 4%; margin-left:2%; margin-right: 4%">
-        <br><br><br>
-        <span class="one"><%= item.category %></span><span class="two"><%= item.sharedOn %></span>
-        <br>
-        <h1 style="text-align: center" class="itemName text_orange"><%= item.name %></h1>
-        <p class="itemDetails"><%= item.description %></p>
-        <br>
-        <p class="itemDetails">Minimum Rent Tenure: <%= item.minTenure %></p>
-        <p class="itemDetails">Maximum Rent Tenure: <%= item.maxTenure %></p>
-        <span ><h2 class="three"><%= item.cost %></h2></span>
-        <span class="four">
-            <a href="#section2" id="contact" class="btn">CONTACT OWNER</a>
-        </span>
-        <% if(userID != user.id){ %>
-        <div class="centered">
-          <a href="#section3" class="btn" id="requestLink">REQUEST ITEM</a>
-        </div>
-        <% } %>
-    </div>
-    <div class="main" id="section2">
-        <h1 class="heading text_orange">OWNER DETAILS</h1>
-        <div class="main" id="section2a">
-            <br><br><br>
-            <h3>
-                <span class="five">Name:</h3></span>
-                <span class="six"><%= user.name %></span>
-            </h3>
-            <br><br><br>
-            <h3>
-                <span class="five">Email ID:</h3></span>
-                <span class="six"><%= user.emailID %></span>
-            </h3>
-            <br><br><br>
-            <h3>
-                <span class="five">Contact Number:</h3></span>
-                <span class="six"><%= user.phone %></span>
-            </h3>
-            <br><br><br>
-            <h3>
-                <span class="five">Address:</h3></span>
-                <span class="six"><%= user.address %></span>
-            </h3>
-            <br>
-        </div>
-    </div>
+  <div class="main" id="section1">
+    <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="myImage" style="max-height: 70vh; width: 45vw;float:left; margin-top: 4%; margin-left:2%; margin-right: 4%">
+    <br><br><br>
+    <span class="one"><%= item.category %></span><span class="two"><%= item.sharedOn %></span>
+    <br>
+    <h1 style="text-align: center" class="itemName text_orange"><%= item.name %></h1>
+    <p class="itemDetails"><%= item.description %></p>
+    <br>
+    <p class="itemDetails">Minimum Rent Tenure: <%= item.minTenure %></p>
+    <p class="itemDetails">Maximum Rent Tenure: <%= item.maxTenure %></p>
+    <span>
+      <h2 class="three"><%= item.cost %></h2>
+    </span>
+    <span class="four">
+      <a href="#section2" id="contact" class="btn">CONTACT OWNER</a>
+    </span>
     <% if(userID != user.id){ %>
-    <div class="main" id="section3">
-      <h1 class="heading text_orange">REQUEST <%= item.name %></h1>
-      <form class="requestForm" action="/request/<%= item.id %>/<%= userID %>/<%= user.id %>" method="post">
-        <div class="inputGroup">
-          <label for="startDate">Starting from: </label>
-          <input type="text" name="startDate" placeholder="Ex. 01-01-2000">
-        </div>
-        <div class="inputGroup duration">
-          <label for="duration">Rent Duration: </label>
-          <input type="text" name="duration" placeholder="Ex. 2"> weeks
-        </div>
-        <input type="submit" class="btn" id="request" value="REQUEST ITEM">
-      </form>
+    <div class="centered">
+      <a href="#section3" class="btn" id="requestLink">REQUEST ITEM</a>
+    </div>
+    <div class="centered">
+      <a href="#section4" class="btn" id="reviewsLink">VIEW CUSTOMER REVIEWS</a>
     </div>
     <% } %>
+  </div>
+  <div class="main" id="section2">
+    <h1 class="heading text_orange">OWNER DETAILS</h1>
+    <div class="main" id="section2a">
+      <br><br><br>
+      <h3>
+        <span class="five">Name:
+      </h3></span>
+      <span class="six"><%= user.name %></span>
+      </h3>
+      <br><br><br>
+      <h3>
+        <span class="five">Email ID:
+      </h3></span>
+      <span class="six"><%= user.emailID %></span>
+      </h3>
+      <br><br><br>
+      <h3>
+        <span class="five">Contact Number:
+      </h3></span>
+      <span class="six"><%= user.phone %></span>
+      </h3>
+      <br><br><br>
+      <h3>
+        <span class="five">Address:
+      </h3></span>
+      <span class="six"><%= user.address %></span>
+      </h3>
+      <br>
+    </div>
+  </div>
+  <div class="main" id="section4">
+    <h1 class="heading text_orange">CUSTOMER REVIEWS</h1>
+    <div id="carouselReviews" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% for(let i = 0; i< item.reviews.length;i++){%>
+          <% if(i==0){%>
+            <div class="carousel-item active">
+          <%} else{%>
+            <div class="carousel-item">
+          <%}%>
+            <p class="postby"> Review By: <%= item.reviews[i].postedBy %></p>
+            <p class="rating">Rating: <%= item.reviews[i].rating %></p>
+            <p class="review">"<%= item.reviews[i].review %>"</p>
+          </div>
+        <%}%>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselReviews" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselReviews" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <% if(userID != user.id){ %>
+  <div class="main" id="section3">
+    <h1 class="heading text_orange">REQUEST <%= item.name %></h1>
+    <form class="requestForm" action="/request/<%= item.id %>/<%= userID %>/<%= user.id %>" method="post">
+      <div class="inputGroup">
+        <label for="startDate">Starting from: </label>
+        <input type="text" name="startDate" placeholder="Ex. 01-01-2000">
+      </div>
+      <div class="inputGroup duration">
+        <label for="duration">Rent Duration: </label>
+        <input type="text" name="duration" placeholder="Ex. 2"> weeks
+      </div>
+      <input type="submit" class="btn" id="request" value="REQUEST ITEM">
+    </form>
+  </div>
+  <% } %>
 </body>
 <script src="/js/itemDetails.js"></script>
+
 </html>

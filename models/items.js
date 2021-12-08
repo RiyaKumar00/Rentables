@@ -16,6 +16,11 @@ const ItemSchema = mongoose.Schema({
       data: Buffer,
       contentType: String
   },
+  reviews:[{
+    postedBy: String,
+    rating: String,
+    review: String
+  }],
 })
 
 

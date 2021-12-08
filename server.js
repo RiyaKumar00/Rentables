@@ -28,6 +28,9 @@ app.use("/logout",require("./routes/logout"));
 app.use("/delete",require("./routes/delete"));
 app.use("/addItem",require("./routes/addItem"));
 app.use("/request",require("./routes/request"));
+app.use("/search",require("./routes/search"));
+app.use("/addReview",require("./routes/review"));
+app.use("/renew",require("./routes/renew"));
 
 var server = app.listen(PORT, function() {
   console.log("Server is running on port " + PORT);
